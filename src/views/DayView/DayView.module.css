@@ -1,0 +1,29 @@
+.container { padding: 24px; }
+.title { font-size: 1.25rem; font-weight: 700; color: #f1f5f9; margin-bottom: 20px; }
+.status { color: #94a3b8; }
+.error  { color: #ef4444; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.placeholder {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 180px;
+  color: #475569;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chartWrap {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 16px;
+}

@@ -1,0 +1,29 @@
+.card {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-left: 4px solid #64748b;
+  min-width: 180px;
+}
+.card.positive { border-left-color: #22c55e; }
+.card.negative { border-left-color: #ef4444; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.symbol { font-weight: 700; font-size: 1rem; color: #f1f5f9; }
+.name   { font-size: 0.75rem; color: #94a3b8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
+
+.price  { font-size: 1.4rem; font-weight: 700; color: #f1f5f9; }
+
+.change { display: flex; gap: 8px; font-size: 0.85rem; }
+.card.positive .change { color: #22c55e; }
+.card.negative .change { color: #ef4444; }
+
+.meta { display: flex; gap: 12px; font-size: 0.75rem; color: #64748b; }
