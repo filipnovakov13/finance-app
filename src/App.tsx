@@ -3,21 +3,24 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { DayView } from './views/DayView/DayView';
 import { WeekView } from './views/WeekView/WeekView';
 import { QuarterView } from './views/QuarterView/QuarterView';
-import type { TimeRange } from './types';
+import { UserChart } from './components/UserChart/UserChart';
 import styles from './App.module.css';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 2, staleTime: 30_000 } },
 });
 
-const TABS: { id: TimeRange; label: string }[] = [
+type Tab = 'day' | '7d' | 'quarter' | 'custom';
+
+const TABS: { id: Tab; label: string }[] = [
   { id: 'day',     label: 'Today' },
   { id: '7d',      label: 'Last 7 Days' },
   { id: 'quarter', label: 'Last Quarter' },
+  { id: 'custom',  label: '🔍 Custom Symbol' },
 ];
 
 export function App() {
-  const [activeTab, setActiveTab] = useState<TimeRange>('day');
+  const [activeTab, setActiveTab] = useState<Tab>('day');
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -41,6 +44,7 @@ export function App() {
           {activeTab === 'day'     && <DayView />}
           {activeTab === '7d'      && <WeekView />}
           {activeTab === 'quarter' && <QuarterView />}
+          {activeTab === 'custom'  && <UserChart />}
         </main>
       </div>
     </QueryClientProvider>
